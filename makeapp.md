@@ -3,8 +3,7 @@
 ## ページレイアウト
 投稿画面、一覧画面を作成
 /resourses/view/books内にxxx.blade.htmlで作成  
-*表示確認後拡張子をphpに修正
-
+*表示確認後拡張子をphpに修正.  
 ## ルーティング(1)
 一覧表示(get)   
 登録(get)  
@@ -17,11 +16,9 @@ Route::get('/create', function(){
      return view('books/create');
 });
 ```
-テンプレートでリンクの確認  
-
+テンプレートでリンクの確認.  
 ## ルーティング(2)
 controllerにまとめる  
-
 ```
 php .\artisan make:controller BookController
 ```
@@ -34,14 +31,11 @@ public function create(){
     return view('books/create');
 }
 ```
-
 ## テンプレート化
 基本テンプレートをlayout.blade.phpにまとめる  
 @extends('ディレクトリ.テンプレート名の拡張子不要')の書式に注意
-
 ## データベース設定
 ### DBを作成 
-
 ``` MySQL Monitor
 create database laravel default charset utf8mb4;
 create user 'lara'@'localhost' identified by 'abcd';
@@ -56,12 +50,10 @@ DB_DATABASE=laravel_demo
 DB_USERNAME=lara
 DB_PASSWORD=abcd
 ```
-
 ### migrationファイルを作成
 ```
 php artisan make:migration create_books_table
 ```
-
 ### カラム設定
 ```xxxx_xx_xx_xxxxx_create_books_table.php
 public function up()
@@ -76,27 +68,21 @@ public function up()
         });
     }
 ```
-
-
-
 ### migration
 ```
 php artisan migrate
 ```
-
 ### rollbackとflesh
 ```
 php artisan migrate:rollback
 php artisan migrate:fresh
 
 ```
-
 ### 初期データの投入
 seederによる初期データの投入
 ```
 php artisan make:seeder BooksTableSeeder
 ```
-
 ```database/seeds/BooksTableSeeder.php
 public function run()
     {
@@ -134,16 +120,13 @@ public function run()
 
     }
 ```
-
 ```
 php .\artisan db:seed --class BooksTableSeeder
 ```
-
 ## モデルを生成 
 ```
 php artisan make:model Book
 ```
-
 ## DB操作
 tinkerによるDB操作
 ### 起動と終了
@@ -485,7 +468,3 @@ public function show(){
       </table>
 @endsection
 ```
-
-
-
-
