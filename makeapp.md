@@ -7,7 +7,16 @@
 
 ## ルーティング(1)
 一覧表示(get)   
-登録(get)   
+登録(get)  
+```routes/web.php
+Route::get('/', function () {
+     return view('books/show');
+});
+
+Route::get('/create', function(){
+     return view('books/create');
+});
+```
 テンプレートでリンクの確認  
 
 ## ルーティング(2)
@@ -15,6 +24,15 @@ controllerにまとめる
 
 ```
 php .\artisan make:controller BookController
+```
+```
+public function show(){
+    return view('books/show');
+}
+
+public function create(){
+    return view('books/create');
+}
 ```
 
 ## テンプレート化
