@@ -13,12 +13,14 @@
               <th>著者</th>
               <th>価格</th>
           </tr>
+          @foreach($books as $book)
           <tr>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th></th>
+              <td>{{$book->id}}</td>
+              <td>{{$book->title}}</td>
+              <td>{{$book->publisher}}</td>
+              <td>{{$book->author}}</td>
+              <td>{{$book->price}}</td>
           </tr>
+          @endforeach
       </table>
 @endsection
