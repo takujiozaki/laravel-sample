@@ -19,7 +19,7 @@ php .\artisan make:controller BookController
 
 ## テンプレート化
 基本テンプレートをlayout.blade.phpにまとめる  
-@extends('ディレクトリ.テンプレート名の拡張子不要')に注意。
+@extends('ディレクトリ.テンプレート名の拡張子不要')の書式に注意
 
 ## データベース設定
 ### DBを作成 
@@ -39,8 +39,24 @@ DB_USERNAME=lara
 DB_PASSWORD=abcd
 ```
 
-モデルを生成 
-サンプルデータを挿入 
+### migrationファイルを作成
+```
+php artisan make:migration create_books_table
+```
+
+### カラム設定
+
+### migration
+```
+php artisan migrate
+```
+### 初期データの投入
+tinkerによるDB操作
+seederによる初期データの投入
+
+
+## モデルを生成 
+
 
 ## ルーティング
 一覧表示(get) 
