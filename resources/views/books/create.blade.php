@@ -13,19 +13,19 @@
         </tr>
         <tr>
             <th>書籍名</th>
-            <td></td>
+            <td><input type="text" name="title" id=""></td>
         </tr>
         <tr>
             <th>出版社名</th>
-            <td></td>
+            <td><input type="text" name="publisher" id=""></td>
         </tr>
         <tr>
             <th>著者</th>
-            <td></td>
+            <td><input type="text" name="author" id=""></td>
         </tr>
         <tr>
             <th>価格</th>
-            <td></td>
+            <td><input type="number" name="price" id=""></td>
         </tr>
     </table>
     <button type="submit" class="btn btn-primary">送信</button>
