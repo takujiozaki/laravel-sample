@@ -50,13 +50,29 @@ php artisan make:migration create_books_table
 ```
 php artisan migrate
 ```
+
+### rollbackとflesh
+```
+php artisan migrate:rollback
+php artisan migrate:fresh
+
+```
+
 ### 初期データの投入
 tinkerによるDB操作
-seederによる初期データの投入
+```
+php artisan tinker
+```
 
+seederによる初期データの投入
+```
+php artisan make:seeder BooksTableSeeder
+```
 
 ## モデルを生成 
-
+```
+php artisan make:model Book
+```
 
 ## ルーティング
 一覧表示(get) 
