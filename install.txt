@@ -1,3 +1,9 @@
+#composer 
+コマンドプロンプト
+```
+composer --version
+Composer version 1.10.10 .......
+```
 # INSTALL
 install コマンド(要composer)
 composer create-project --prefer-dist laravel/laravel demo "6.*"
