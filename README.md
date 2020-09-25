@@ -470,6 +470,9 @@ public function show(){
 ```
 ### 新規登録(get)
 登録フォームを表示
+```
+Route::post('/create', 'BookController@store');
+```
 ### 新規登録(post)
 登録処理後、一覧画面にリダイレクト
 ### validation
