@@ -6,6 +6,7 @@
 <h1>LaravelBooks</h1>
     <a href="{{url('/')}}" class="btn btn-info">Back</a>
     <form action="" method="post">
+    @csrf
     <table class="table">
         <tr>
             <th>ID</th>

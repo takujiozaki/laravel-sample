@@ -16,4 +16,18 @@ class BookController extends Controller
     public function create(){
         return view('books/create');
     }
+
+    public function store(Request $request){
+        $book = new Book();
+        $book -> title = $request -> title;
+        $book -> author = $request -> author;
+        $book -> publisher = $request -> publisher;
+        $book -> price = $request -> price;
+        $book -> created_at = now();
+        $book -> updated_at = now();
+        $book -> save();
+     
+        return redirect('/');
+     
+     }
 }

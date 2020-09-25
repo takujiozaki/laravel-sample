@@ -22,3 +22,4 @@
 Route::get('/', 'BookController@show');
 
 Route::get('/create', 'BookController@create');
+Route::post('/create', 'BookController@store');
