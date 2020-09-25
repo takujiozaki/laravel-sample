@@ -470,11 +470,34 @@ public function show(){
 ```
 ### 新規登録(get)
 登録フォームを表示
+```web.php
+Route::get('/create', 'BookController@create');
 ```
-Route::post('/create', 'BookController@store');
+```BookController.php
+public function create(){
+    return view('books/createbook');
+}
 ```
 ### 新規登録(post)
+```web.php
+Route::post('/create', 'BookController@store');
+```
 登録処理後、一覧画面にリダイレクト
+```BookController.php
+public function store(Request $request){
+   $book = new Book();
+   $book -> title = $request -> title;
+   $book -> author = $request -> author;
+   $book -> publisher = $request -> publisher;
+   $book -> price = $request -> price;
+   $book -> created_at = now();
+   $book -> updated_at = now();
+   $book -> save();
+
+   return redirect('/');
+
+}
+```
 ### validation
 ### 更新処理(get)
 更新フォームを表示(登録画面を再利用)
