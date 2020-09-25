@@ -1,5 +1,33 @@
 # 簡単な蔵書アプリケーションをLaravelで作成
 
+## composerのインストールを確認
+
+```コマンドプロンプト
+composer --version
+Composer version 1.10.10 .......
+```
+## INSTALL
+install コマンド(要composer)  
+```
+composer create-project --prefer-dist laravel/laravel demo "6.*"
+```
+*laravel new app名 では最新バージョンがインストールされるので注意  
+
+## installディレクトリ
+開発サーバーで運用するなら場所は問わない。  
+デスクトップやホームディレクトリでも可。  
+*複数のアプリケーションを開発することもあるのでXAMPPのルートを使用することは避けた方が無難。  
+*開発サーバーor仮想サーバー(docker/virtualbox)を利用するのが一般的。  
+
+## TEST起動
+インストールディレクトリに入り、php artisan serve
+
+## 初期設定
+```config/app.php
+'timezone' => 'Asia/Tokyo',
+ 'locale' => 'ja',
+```
+
 ## ページレイアウト
 投稿画面、一覧画面を作成
 /resourses/view/books内にxxx.blade.htmlで作成  
