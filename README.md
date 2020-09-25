@@ -39,7 +39,7 @@ public function create(){
 ``` MySQL Monitor
 create database laravel default charset utf8mb4;
 create user 'lara'@'localhost' identified by 'abcd';
-grant all on laravel_demo.* to 'lara'@'localhost';
+grant all on laravel.* to 'lara'@'localhost';
 ```
 ### .envを修正
 ```
