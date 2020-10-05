@@ -571,7 +571,19 @@ public function store(Request $request){
 {{-- error end--}}
 <input type="text" name="title" id="" value="{{old('title')}}">
 ```
-
+#### 日本語化
+https://github.com/minoryorg/validation.php  
+/resources/ja/を作成し配置  
+```app.php
+  'locale' => 'ja',
+```
+```validation.php
+ 'attributes' => [
+        'title'=>'書籍名',
+        'author'=>'著者',
+        'price'=>'価格',
+    ],
+```
 ### 更新処理(get)
 更新フォームを表示(登録画面を再利用)
 ```web.php
