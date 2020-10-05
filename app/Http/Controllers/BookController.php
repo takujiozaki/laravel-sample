@@ -44,10 +44,11 @@ class BookController extends Controller
     }
 
     public function edit($id){
-        $book = Book::find($id);
-        if(is_null($book)){
-        abort(404);
-        }
+        // $book = Book::find($id);
+        // if(is_null($book)){
+        //     abort(404);
+        // }
+        $books = Book::findOrFail($id);
         return view('books/edit', ['book'=>$book]);
     }
 
@@ -74,10 +75,11 @@ class BookController extends Controller
     }
 
     public function delete($id){
-        $book = Book::find($id);
-        if(is_null($book)){
-           abort(404);
-        }
+        // $book = Book::find($id);
+        // if(is_null($book)){
+        //    abort(404);
+        // }
+        $books = Book::findOrFail($id);
         return view('books/delete', ['book'=>$book]);
     }
 
