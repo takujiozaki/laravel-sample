@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 
-@section('title', '新規蔵書')
+@section('title', '蔵書更新')
 
 @section('content')
 <h1>LaravelBooks</h1>
@@ -19,23 +19,23 @@
     <table class="table">
         <tr>
             <th>ID</th>
-            <td>#</td>
+            <td>{{$book->id}} <input type="hidden" name="id" value="{{$book->id}}"></td>
         </tr>
         <tr>
             <th>書籍名</th>
-            <td><input type="text" name="title" id="" value="{{old('title')}}"></td>
+            <td><input type="text" name="title" id="" value="{{old('title', $book->title)}}"></td>
         </tr>
         <tr>
             <th>出版社名</th>
-            <td><input type="text" name="publisher" id="" value="{{old('publisher')}}"></td>
+            <td><input type="text" name="publisher" id="" value="{{old('publisher', $book->publisher)}}"></td>
         </tr>
         <tr>
             <th>著者</th>
-            <td><input type="text" name="author" id="" value="{{old('author')}}"></td>
+            <td><input type="text" name="author" id="" value="{{old('author', $book->author)}}"></td>
         </tr>
         <tr>
             <th>価格</th>
-            <td><input type="number" name="price" id="" value="{{old('price')}}"></td>
+            <td><input type="number" name="price" id="" value="{{old('price', $book->price)}}"></td>
         </tr>
     </table>
     <button type="submit" class="btn btn-primary">送信</button>

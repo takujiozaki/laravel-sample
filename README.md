@@ -527,8 +527,58 @@ public function store(Request $request){
 }
 ```
 ### validation
+#### Controllerにバリデーションを追加
+```BookController.php
+//use追加
+use Validator;
+```
+
+```BookController.php
+public function store(Request $request){
+  //validation追加
+  $validator = Validator::make($request->all(),[
+    'title' => 'required',
+    'author' => 'required',
+    'price'=> 'integer|min:0',
+  ]);
+
+  if($validator->fails()){
+    return redirect('create/')->withErrors($validator)->withInput();
+  }
+
+  $book = new Book();
+  $book -> title = $request -> title;
+  $book -> author = $request -> author;
+  $book -> publisher = $request -> publisher;
+  $book -> price = $request -> price;
+  $book -> created_at = now();
+  $book -> updated_at = now();
+  $book -> save();
+
+  return redirect('/');
+
+}
+
+```create.blade.php
+{{-- error start--}}
+@if(count($errors))
+    <ul>
+    @foreach($errors->all() as $error)
+    <li class="text-danger">{{$error}}</li>
+    @endforeach
+    </ul>
+@endif
+{{-- error end--}}
+<input type="text" name="title" id="" value="{{old('title')}}">
+```
+
 ### 更新処理(get)
 更新フォームを表示(登録画面を再利用)
+```web.php
+Route::get('/edit{id}', 'BookController@edit');
+Route::post('/edit{id}', 'BookController@update');
+```
+
 ### 更新処理(post)
 登録処理後、一覧画面にリダイレクト
 ### 削除処理(get)

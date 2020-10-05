@@ -12,6 +12,7 @@
               <th>出版社</th>
               <th>著者</th>
               <th>価格</th>
+              <th>&nbsp;</th>
           </tr>
           @foreach($books as $book)
           <tr>
@@ -20,6 +21,7 @@
               <td>{{$book->publisher}}</td>
               <td>{{$book->author}}</td>
               <td>{{$book->price}}</td>
+              <td><a href="{{url('edit/')}}{{$book->id}}">修正</a> | <a href="{{url('delete/')}}{{$book->id}}">削除</a></td>
           </tr>
           @endforeach
       </table>
